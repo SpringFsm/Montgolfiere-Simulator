@@ -73,3 +73,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Ignorer l'asset lourd Unity Terrain URP Demo Scene
+/[Aa]ssets/TerrainDemoScene_URP
