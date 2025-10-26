@@ -1029,11 +1029,33 @@
                 },
                 {
                     "name": "",
+                    "id": "8bdb9567-348c-4728-9ecc-144c784f0f84",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivBruleurs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "493ed033-0aa6-4265-bbe2-194b90544810",
                     "path": "<XRController>{LeftHand}/{TriggerButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
+                    "action": "ActivSoupape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1dc9d4c3-afbb-4d8a-a705-dc08166ecb75",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "ActivSoupape",
                     "isComposite": false,
                     "isPartOfComposite": false

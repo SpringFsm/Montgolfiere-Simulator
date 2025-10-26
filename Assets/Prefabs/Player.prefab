@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7238698795895643263}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: PlayerHands
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,7 +238,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.114, y: 1.4151715, z: -7.097}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1923077, y: 0.1923077, z: 0.1923077}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2826818011079879338}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 5786911888253208723}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: PlayerHands
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

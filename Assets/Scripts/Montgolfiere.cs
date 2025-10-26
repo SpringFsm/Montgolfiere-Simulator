@@ -8,8 +8,12 @@ public class MontgolfiereXR : MonoBehaviour
     [SerializeField] private float fallForce = 2f;
     [SerializeField] private float maxUpForce = 20f;
 
+    [Header("Wind Settings")]
+    [SerializeField] private AnimationCurve windX = AnimationCurve.Linear(0, 0, 50, 5);
+    [SerializeField] private AnimationCurve windZ = AnimationCurve.Linear(0, 0, 50, -3);
+
     [Header("Input Actions")]
-    public InputActionAsset inputSystem; // ton asset "InputSystem"
+    public InputActionAsset inputSystem;
 
     private InputAction activBruleursAction;
     private InputAction activSoupapeAction;
@@ -24,12 +28,10 @@ public class MontgolfiereXR : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Récupération des actions depuis ton asset
         var actionMap = inputSystem.FindActionMap("Montgolfiere");
         activBruleursAction = actionMap.FindAction("ActivBruleurs");
         activSoupapeAction = actionMap.FindAction("ActivSoupape");
 
-        // Souscrire aux callbacks
         activBruleursAction.performed += ctx => isRising = true;
         activBruleursAction.canceled += ctx => isRising = false;
 
@@ -48,6 +50,7 @@ public class MontgolfiereXR : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Vertical forces
         if (isRising)
         {
             upForce += riseForce;
@@ -64,5 +67,13 @@ public class MontgolfiereXR : MonoBehaviour
 
         upForce = Mathf.Clamp(upForce, 0f, maxUpForce);
         rb.AddForce(Vector3.up * upForce, ForceMode.Force);
+
+        // Wind force based on height
+        float y = transform.position.y;
+        float windForceX = windX.Evaluate(y);
+        float windForceZ = windZ.Evaluate(y);
+        Vector3 windForce = new Vector3(windForceX, 0f, windForceZ);
+
+        rb.AddForce(windForce, ForceMode.Force);
     }
 }
